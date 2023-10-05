@@ -4,6 +4,7 @@ import './App.css';
 const SubjectNav = (props) => {
   const chooseSubject = async (subject) => {
     try{
+      console.log(subject);
       const response = await fetch('http://localhost:5000/api/getCourses', {
         method: 'POST',
         headers: {
@@ -49,6 +50,7 @@ function App() {
 
   return (
     <>
+    
       <div className="App">        
           <div className='App-Name'>
             <h1>Newbie Wiki</h1>

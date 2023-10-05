@@ -3,11 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors'); 
 const app = express();
-
-directoryPath = path.join('../public/markdowns');
+app.use(express.json());   
 app.use(cors());
 
-
+directoryPath = path.join('../public/markdowns');
 
 app.get('/api/getSubjects', (req, res) => {
     fs.readdir(directoryPath, function (err, files) {
@@ -23,8 +22,7 @@ app.get('/api/getSubjects', (req, res) => {
 });
 
 app.post('/api/getCourses', (req, res) => {
-    const subject = req.body;
-    console.log(subject);
+    const subject = req.body.subject;
     fs.readdir(directoryPath + '/' + subject, function (err, files) {
         if (err) {
             return console.log('Unable to scan directory: ' + err);
