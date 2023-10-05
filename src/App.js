@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const SubjectNav = (props) => {
+  const chooseSubject = (subject) => {
+    console.log(subject);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='Navigation-Items' onClick={() => chooseSubject(props.subjectName)}>{props.subjectName}</div>
+  )
+}
+
+
+function App() {
+  const subjects = ["Maths", "Computer Science"]
+  return (
+    <>
+      <div className="App">        
+          <div className='App-Name'>
+            <h1>Newbie Wiki</h1>
+          </div>
+          <div className='Navigation-Bar'>          
+            {subjects.map((subject) => <SubjectNav subjectName={subject}/>)}      
+          </div>    
+        </div>
+      
+    </>
   );
 }
 
