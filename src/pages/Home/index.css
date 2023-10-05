@@ -1,0 +1,64 @@
+.Navigation-Bar {
+    background-color: #282c34;
+    min-height: 10vh;
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; */
+    font-size: calc(5px + 2vmin);
+    color: white;
+    padding: 2em;
+}
+  
+.Navigation-Items {
+    /* margin: auto; */
+    margin-bottom: .5em;
+    text-decoration: underline;  
+}
+  
+.Navigation-Items:hover {
+    text-decoration: underline;  
+    cursor: pointer;
+}
+
+.BookContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.rectangleStyles {
+    width: 200px;
+    height: 200px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 2em;
+}
+
+.LeftContainer {
+    float: left;
+    width: 20%;
+    height: 100vh;
+    background-color: aquamarine;
+}
+
+.RightContainer {
+    float: right;
+    display: flex;
+    width: 80%;
+    height: 100vh;
+}
+
+.BookmarkContainer {
+    background-color: lightcyan;
+    min-height: 10vh;
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; */
+    font-size: calc(5px + 2vmin);
+    padding: 2em;
+}

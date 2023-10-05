@@ -1,0 +1,22 @@
+import "./style.css"
+
+const ToptNavItem = (props) => {
+    const choosePage = (page) => {
+      console.log(page);
+    }
+    return (
+      <a className='TopNav-Items' onClick={() => choosePage(props.pageName)}>{props.pageName}</a>
+    )
+  }
+  
+const pages = ["Notes", "Papers", "README"];
+  
+const TopNav = () => {
+    return (
+        <div className="TopNav">
+            {pages.map((page) => <ToptNavItem pageName={page}/>)}
+        </div>
+    );
+};
+    
+export default TopNav;

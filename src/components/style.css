@@ -1,0 +1,42 @@
+.topbar {
+    overflow: hidden;
+    border-bottom: 1px solid lightgrey;
+}
+  
+.topbar a {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+}
+  
+.topbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+  
+.topbar-right {
+    float: right;
+}
+  
+.TopNav {
+    background-color: white;
+    min-height: 8vh;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center;
+    justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    /* color: white; */
+}
+  
+.TopNav-Items {
+    margin: auto;
+    text-decoration: underline;  
+}
+  
+.TopNav-Items:hover {
+    text-decoration: underline;  
+    cursor: pointer;
+}
