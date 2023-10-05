@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import './App.css';
 
 const SubjectNav = (props) => {
@@ -11,7 +12,14 @@ const SubjectNav = (props) => {
 
 
 function App() {
-  const subjects = ["Maths", "Computer Science"]
+  const subjects = ["E"]
+  useEffect(() => {
+    fetch('http://localhost:5000/api/getSubjects')
+    .then((res) => console.log(res))
+    // .then((data) => console.log(data))
+    .catch(error => alert(error));
+  })
+
   return (
     <>
       <div className="App">        
