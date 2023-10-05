@@ -22,4 +22,15 @@ app.get('/api/getSubjects', (req, res) => {
     });
 });
 
+app.post('/api/getCourses', (req, res) => {
+    const subject = req.body;
+    console.log(subject);
+    fs.readdir(directoryPath + '/' + subject, function (err, files) {
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        }
+        res.json(files);
+    });
+}); 
+
 app.listen(5000, () => console.log('Server started on port 5000'));
