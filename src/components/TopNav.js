@@ -9,7 +9,7 @@ const ToptNavItem = (props) => {
     )
   }
   
-const pages = ["Notes", "Papers", "README"];
+const pages = ["Recollection", "Chase", "README"];
   
 const TopNav = () => {
     return (

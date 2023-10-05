@@ -31,9 +31,6 @@
 .rectangleStyles {
     width: 200px;
     height: 200px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 2em;
 }
@@ -42,7 +39,6 @@
     float: left;
     width: 20%;
     height: 100vh;
-    background-color: aquamarine;
 }
 
 .RightContainer {
@@ -53,7 +49,7 @@
 }
 
 .BookmarkContainer {
-    background-color: lightcyan;
+    background-color: lemonchiffon;
     min-height: 10vh;
     /* display: flex;
     flex-direction: row;
@@ -61,4 +57,26 @@
     justify-content: center; */
     font-size: calc(5px + 2vmin);
     padding: 2em;
+}
+
+.BookText {
+    margin-left: 1em;
+    font-size: large;
+}
+
+.BookButton {
+    border: 0px;
+    font-size: medium;
+    width: 5em;
+    background-color: burlywood;
+    float: right;
+}
+
+.BookButton:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.BookButton:active {
+    transform: scale(0.95);
 }

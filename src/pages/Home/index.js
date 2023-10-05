@@ -21,7 +21,7 @@ const Home = ({ text }) => {
                 <BookItem text={"Linear Algebra"}/>
                 <BookItem text={"Calculus"}/>
                 <BookItem text={"Machine Learing"}/>
-                <BookItem text={"Dee Learning"}/>
+                <BookItem text={"Deep Learning"}/>
             </div>
             {/* <div className="BookContainer">
                 <BookItem text={"Linear Algebra"}/>
