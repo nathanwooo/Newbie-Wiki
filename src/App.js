@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 const SubjectNav = (props) => {
@@ -12,13 +12,21 @@ const SubjectNav = (props) => {
 
 
 function App() {
-  const subjects = ["E"]
+  const [subjects, setSubjects] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/api/getSubjects')
-    .then((res) => console.log(res))
-    // .then((data) => console.log(data))
-    .catch(error => alert(error));
-  })
+    async function fetchData() {
+      try{
+        const response = await fetch('http://localhost:5000/api/getSubjects');
+        const data = await response.json();
+        setSubjects(data);
+      }
+      catch(error){
+        alert(error);
+      }
+      
+    }
+    fetchData();
+  }, [])
 
   return (
     <>

@@ -1,18 +1,24 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors'); 
 const app = express();
 
 directoryPath = path.join('../public/markdowns');
+app.use(cors());
+
+
+
 app.get('/api/getSubjects', (req, res) => {
     fs.readdir(directoryPath, function (err, files) {
         if (err) {
             return console.log('Unable to scan directory: ' + err);
         }
-        const directoryContents = files.map((file) => ({
-            name: file,
-          }));
-        res.json(directoryContents);
+        // const directoryContents = files.map((file) => ({
+        //     name: file,
+        //   }));
+        // res.json(directoryContents);
+        res.json(files);
     });
 });
 
