@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
 import TopBar from './components/TopBar';
 import TopNav from './components/TopNav';
+import Home from './pages/Home';
+import Book from './pages/Book';
 
 // const SubjectNav = (props) => {
 //   const chooseSubject = async (subject) => {
@@ -58,6 +59,7 @@ function App() {
       <TopNav />
       <Routes>
         <Route path='/' element={<Home />}/>
+        <Route path='/book' element={<Book />} />
       </Routes>
     </BrowserRouter>
     // <>
