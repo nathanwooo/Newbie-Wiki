@@ -1,5 +1,6 @@
 import ChapterNav from "./components/ChapterNav";
 import Bookmark from "../../components/Bookmark";
+import MarkdownViewer from "../../components/MarkdownViewer";
 
 const Book = () => {
     return (
@@ -8,7 +9,8 @@ const Book = () => {
                 <ChapterNav />
                 <Bookmark />
             </div>
-            <div className="RightContainer">
+            <div className="RightMarkdownContainer">
+                <MarkdownViewer filepath={"./markdowns/Maths/2222.md"}/>
             </div>
         </div>
     )
