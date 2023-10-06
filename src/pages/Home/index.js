@@ -10,8 +10,6 @@ const subjects = ["Maths", "Computer Science"];
 const Home = ({ text }) => {
     return (
         <div>
-            <TopBar />
-            <TopNav />
             {/* <SubjectNav /> */}
             <div className="LeftContainer">
                 <SubjectNav />

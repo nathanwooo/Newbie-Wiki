@@ -2,7 +2,7 @@ import '../index.css';
 
 const BookItem = ({ text }) => {
     return (
-        <div className="rectangleStyles">
+        <div className="BookBlock">
             <p className="BookText">{text}</p>
             <button className='BookButton'>read</button>
         </div>

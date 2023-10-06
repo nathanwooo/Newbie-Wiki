@@ -28,9 +28,10 @@
     height: 80vh;
 }
 
-.rectangleStyles {
+.BookBlock {
     width: 200px;
     height: 200px;
+    border: .2em solid darkgoldenrod;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 2em;
 }
@@ -49,7 +50,7 @@
 }
 
 .BookmarkContainer {
-    background-color: lemonchiffon;
+    background-color: lightgoldenrodyellow;
     min-height: 10vh;
     /* display: flex;
     flex-direction: row;
@@ -75,8 +76,4 @@
 .BookButton:hover {
     color: white;
     cursor: pointer;
-}
-
-.BookButton:active {
-    transform: scale(0.95);
 }
