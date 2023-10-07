@@ -23,12 +23,16 @@ const SubjectNav = ({ onSubjectChange }) => {
         const response = await fetch('http://localhost:5000/api/getSubjects');
         const data = await response.json();
         setSubjects(data);
+
+        if (data.length > 0) {
+          setSelectedSubject(data[0]);
+          onSubjectChange(data[0]);
+        }
       } catch (error) {
         alert(error);
       }
     }
     fetchData();
-    
   }, []);
 
   const chooseSubject = (subject) => {

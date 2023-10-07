@@ -9,6 +9,7 @@ const Home = ({ text }) => {
     const [courses, setCourses] = useState([]);
     const handleSubjectChange = async (subject) => {
         try {
+            setCurrentSubject(subject);
             const response = await fetch('http://localhost:5000/api/getCourses', {
               method: 'POST',
               headers: {

@@ -14,7 +14,7 @@ const pages = ["Recollection", "Chase", "README"];
 const TopNav = () => {
     return (
         <div className="TopNav">
-            {pages.map((page) => <ToptNavItem pageName={page}/>)}
+            {pages.map((page) => <ToptNavItem key={page} pageName={page}/>)}
         </div>
     );
 };
