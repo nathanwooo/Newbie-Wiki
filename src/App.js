@@ -5,6 +5,7 @@ import TopBar from './components/TopBar';
 import TopNav from './components/TopNav';
 import Home from './pages/Home';
 import Book from './pages/Book';
+import Paper from './pages/Paper';
 
 // const SubjectNav = (props) => {
 //   const chooseSubject = async (subject) => {
@@ -60,6 +61,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/book' element={<Book />} />
+        <Route path='/paper' element={<Paper />} />
       </Routes>
     </BrowserRouter>
     // <>
