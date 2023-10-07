@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 const ChapterNavItem = (props) => {
     const chooseChapter = (chapter) => {
-      console.log(chapter);
+      props.onChapterChange(chapter);
     }
     return (
       <div className='Navigation-Items' onClick={() => chooseChapter(props.chapterName)}>{props.chapterName}</div>
@@ -22,6 +22,9 @@ const ChapterNavItem = (props) => {
               });
               const data = await response.json();
               setChapters(data);
+              if (data.length > 0) {
+                props.onChapterChange(data[0]);
+              }
           } catch (error) {
               alert(error);
           }
@@ -33,7 +36,7 @@ const ChapterNavItem = (props) => {
             Chapters: 
             <br></br>
             <br></br>
-              {Chapters.map((chapter) => <ChapterNavItem chapterName={chapter}/>)}
+              {Chapters.map((chapter) => <ChapterNavItem chapterName={chapter} onChapterChange={props.onChapterChange}/>)}
           </div>
       );
   };
