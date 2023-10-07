@@ -6,7 +6,6 @@ const JournalNav = () => {
             <br></br>
             <div className='Navigation-Items'>CVPR</div>
             <div className='Navigation-Items'>WWW</div>
-            <div className="Navigation-Items">Media (hku fbe)</div>
         </div>
     );
 };
