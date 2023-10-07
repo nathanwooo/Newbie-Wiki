@@ -1,14 +1,20 @@
 import '../index.css';
 import { useNavigate } from "react-router-dom";
 
-const BookItem = ({ text }) => {
+const BookItem = (props) => {
     const navigation = useNavigate();
     const openBook = () => {
-        navigation('/book');
+        navigation('/book',
+            {
+                state: {
+                    subject: props.subject,
+                    course: props.course
+                }
+            });
     }
     return (
         <div className="BookBlock">
-            <p className="BookText">{text}</p>
+            <p className="BookText">{props.course}</p>
             <button className='BookButton' onClick={openBook}>read</button>
         </div>
     );

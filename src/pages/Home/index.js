@@ -31,7 +31,7 @@ const Home = ({ text }) => {
             </div>
             <div className="RightContainer">
                 {courses.map((course) => (
-                    <BookItem key={course} text={course}/>
+                    <BookItem key={course} subject={currentSubject} course={course} />
                 ))}
                 
             </div>

@@ -31,4 +31,15 @@ app.post('/api/getCourses', (req, res) => {
     });
 }); 
 
+app.post("/api/getChapters", (req, res) => {
+    const subject = req.body.subject;
+    const course = req.body.course;
+    fs.readdir(directoryPath + '/' + subject + '/' + course, function (err, files) {
+        if (err) {
+            return console.log('Unable to scan directory: ' + err);
+        }
+        res.json(files);
+    });
+});
+
 app.listen(5000, () => console.log('Server started on port 5000'));
