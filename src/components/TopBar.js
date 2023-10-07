@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const TopBar = () => {
     return (
         <div className="topbar">
-            <Link to="/">NewbieWiki</Link>
+            <Link to="/" style={{ color: 'black' }}>NewbieWiki</Link>
             <div className="topbar-right">
                 <a>Account</a>
             </div>

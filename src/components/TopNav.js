@@ -1,5 +1,5 @@
 import "./style.css"
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 // const ToptNavItem = (props) => {
 //     const choosePage = (page) => {
@@ -15,9 +15,9 @@ const pages = ["Recollection", "Chase", "README"];
 const TopNav = () => {
     return (
         <div className="TopNav">
-          <Link to="/" className="TopNav-Items">Recollection</Link>
-          <Link to="/paper" className="TopNav-Items">Chase</Link>
-          <Link to="/" className="TopNav-Items">README</Link>
+          <NavLink to="/" className={({isActive}) => "TopNav-Items"+(isActive ? "-Active" : "")}>Recollection</NavLink>
+          <NavLink to="/paper" className={({isActive}) => "TopNav-Items"+(isActive ? "-Active" : "")}>Chase</NavLink>
+          <NavLink to="/readme" className={({isActive}) => "TopNav-Items"+(isActive ? "-Active" : "")}>README</NavLink>
             {/* {pages.map((page) => <ToptNavItem key={page} pageName={page}/>)} */}
         </div>
     );
