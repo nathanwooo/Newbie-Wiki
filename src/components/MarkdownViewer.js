@@ -5,14 +5,16 @@ const MarkdownViewer = ({ filepath }) => {
     const [markdownContent, setMarkdownContent] = useState('');
 
     useEffect(() => {
-        // fetch markdown content from the file
-        fetch(filepath)
-            .then((response) => response.text())
-            .then((text) => {
-                console.log(filepath)
-                console.log(text);
-                setMarkdownContent(text);
-            }) 
+        if (filepath != '') {
+            // fetch markdown content from the file
+            fetch(filepath)
+                .then((response) => response.text())
+                .then((text) => {
+                    console.log(filepath)
+                    console.log(text);
+                    setMarkdownContent(text);
+                }) 
+        }
     }, [filepath]);
 
     return (
