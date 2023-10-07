@@ -1,11 +1,11 @@
 import SubjectNav from "./components/SubjectNav";
 import BookItem from "./components/BookItem";
 import Bookmark from "../../components/Bookmark";
+import { useState } from "react";
 import './index.css';
 
-const subjects = ["Maths", "Computer Science"];
-
 const Home = ({ text }) => {
+    const [currentSubject, setCurrentSubject] = useState('');
     return (
         <div>
             <div className="LeftContainer">
