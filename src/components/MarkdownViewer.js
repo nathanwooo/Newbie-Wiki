@@ -11,7 +11,7 @@ const MarkdownViewer = ({ filepath }) => {
                 .then((response) => response.text())
                 .then((text) => {
                     console.log(filepath)
-                    console.log(text);
+                    // console.log(text);
                     setMarkdownContent(text);
                 }) 
         }

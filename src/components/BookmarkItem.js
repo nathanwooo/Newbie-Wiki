@@ -1,10 +1,10 @@
-import '../index.css';
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react';
 
-const BookItem = (props) => {
+const BookmarkItem = (props) => {
     const navigation = useNavigate();
     const openBook = () => {
+        console.log(props.subject);
+        console.log(props.course);
         navigation('/book',
             {
                 state: {
@@ -13,12 +13,12 @@ const BookItem = (props) => {
                 }
             });
     }
+
     return (
-        <div className="BookBlock">
-            <p className="BookText">{props.course}</p>
-            <button className='BookButton' onClick={openBook}>read</button>
+        <div className="Navigation-Items" onClick={openBook}>
+            {props.course}
         </div>
-    );
-};
-  
-export default BookItem;
+    )
+}
+
+export default BookmarkItem;

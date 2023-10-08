@@ -1,11 +1,9 @@
-import "../index.css";
+import BookmarkItem from "./BookmarkItem";
 
 const Bookmark = () => {
     return (
         <div className="BookmarkContainer">
-            Bookmark:
-            <br></br>
-            None
+            <BookmarkItem subject="Maths" course="Calculus" />
         </div>
     )
 }

@@ -19,6 +19,7 @@ const Book = () => {
                 <Bookmark />
             </div>
             <div className="RightMarkdownContainer">
+                <button>bookmark this</button>
                 <MarkdownViewer filepath={filepath}/>
             </div>
         </div>
