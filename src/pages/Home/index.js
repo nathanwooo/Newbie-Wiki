@@ -2,7 +2,7 @@ import SubjectNav from "./components/SubjectNav";
 import BookItem from "./components/BookItem";
 import Bookmark from "../../components/Bookmark";
 import { useState } from "react";
-import './index.css';
+import axios from 'axios';
 
 const Home = ({ text }) => {
     const [currentSubject, setCurrentSubject] = useState('');
@@ -22,19 +22,43 @@ const Home = ({ text }) => {
           } catch (error) {
             alert(error);
           }
-    }    
+    }
+    
+    const [selectedFile, setSelectedFile] = useState(null);
+    const handleFileChange = (event) => {
+      setSelectedFile(event.target.files[0]);
+    };
+    
+    const handleUpload = () => {
+      if (selectedFile) {
+        const formData = new FormData();
+        formData.append('file', selectedFile);
+        // console.log(formData);
+        axios.post('http://localhost:5000/upload', formData)
+          .then((response) => {
+            console.log('File uploaded successfully');
+          })
+          .catch((error) => {
+            console.error('Error uploading file:', error);
+          });
+      }
+    };
+
     return (
         <div>
-            <div className="LeftContainer">
-                <SubjectNav onSubjectChange={handleSubjectChange}/>
-                <Bookmark />
-            </div>
-            <div className="RightContainer">
-                {courses.map((course) => (
-                    <BookItem key={course} subject={currentSubject} course={course} />
-                ))}
-                
-            </div>
+          <div className="LeftContainer">
+              <SubjectNav onSubjectChange={handleSubjectChange}/>
+              <Bookmark />
+          </div>
+          <div className="RightContainer">
+            {courses.map((course) => (
+                <BookItem key={course} subject={currentSubject} course={course} />
+            ))}
+            <div style={{border: "1px solid black", height: "3em"}}>
+              <input type="file" onChange={handleFileChange} />
+              <button onClick={handleUpload}>Upload</button>
+            </div>  
+          </div>
         </div>
     );
 };
